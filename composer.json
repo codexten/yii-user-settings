@@ -1,0 +1,21 @@
+{
+  "name": "codexten/yii-user-settings",
+  "description": "codexten,yii,settings",
+  "keywords": [
+    "eii"
+  ],
+  "type": "library",
+  "autoload": {
+    "psr-4": {
+      "codextend\\yii\\user\\settings\\": "src"
+    }
+  },
+  "extra": {
+    "branch-alias": {
+      "dev-master": "2.0.x-dev"
+    },
+    "sconfig-plugin": {
+      "settings": "config/settings.php"
+    }
+  }
+}
