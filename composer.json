@@ -5,6 +5,9 @@
     "eii"
   ],
   "type": "library",
+  "require": {
+    "codexten/yii-user-settings" : "^2.0.0"
+  },
   "autoload": {
     "psr-4": {
       "codextend\\yii\\user\\settings\\": "src"
