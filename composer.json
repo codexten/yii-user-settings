@@ -6,11 +6,11 @@
   ],
   "type": "library",
   "require": {
-    "codexten/yii-settings" : "^2.0.0"
+    "codexten/yii-settings": "^2.0.0"
   },
   "autoload": {
     "psr-4": {
-      "codextend\\yii\\user\\settings\\": "src"
+      "codexten\\yii\\user\\settings\\": "src"
     }
   },
   "extra": {
