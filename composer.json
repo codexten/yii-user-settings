@@ -18,7 +18,8 @@
       "dev-master": "2.0.x-dev"
     },
     "config-plugin": {
-      "userSettings": "config/userSettings.php"
+      "userSettings": "config/userSettings.php",
+      "migrationNamespaces": "config/migrationNamespaces.php"
     }
   }
 }

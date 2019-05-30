@@ -1,0 +1,12 @@
+config:
+  messageCategory: codexten:user:settings
+migration:
+  create_user_setting_table:
+    fields: |
+      user_id:integer:foreignKey(user),
+      key:string(50),
+      value:text,
+      created_at:integer,
+      updated_at:integer
+model:
+  user_setting:
