@@ -2,7 +2,7 @@
 
 namespace codexten\yii\user\settings\components;
 
-use codextend\yii\user\settings\models\UserSetting;
+use codexten\yii\user\settings\models\UserSetting;
 use phpDocumentor\Reflection\Types\Integer;
 use Yii;
 use yii\base\Component;

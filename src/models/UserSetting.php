@@ -1,6 +1,6 @@
 <?php
 
-namespace codextend\yii\user\settings\models;
+namespace codexten\yii\user\settings\models;
 
 use codexten\yii\db\ActiveRecord;
 use codexten\yii\modules\auth\models\User;
