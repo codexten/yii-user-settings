@@ -1,6 +1,6 @@
 <?php
 
-namespace codextend\yii\user\settings\migrations;
+namespace codexten\yii\user\settings\migrations;
 
 use yii\db\Migration;
 
