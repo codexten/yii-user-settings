@@ -33,7 +33,7 @@ class UserSettings extends Component
     {
         parent::init();
 
-        if ($this->_userId === null && !Yii::$app->user->isGuest) {
+        if (Yii::$app->hasProperty('user') && $this->_userId === null && !Yii::$app->user->isGuest) {
             $this->_userId = Yii::$app->user->id;
         }
 
@@ -41,7 +41,7 @@ class UserSettings extends Component
 
 
     /**
-     * @param Integer $userId
+     * @param  Integer  $userId
      */
     public function setUserId(Integer $userId)
     {
@@ -60,7 +60,7 @@ class UserSettings extends Component
     }
 
     /**
-     * @param array $attributes
+     * @param  array  $attributes
      *
      * @return ActiveRecord
      */
@@ -70,6 +70,11 @@ class UserSettings extends Component
         $modelClass = $this->modelClass;
 
         $attributes = ArrayHelper::merge(['user_id' => $this->_userId,], $attributes);
+
+        $model = $modelClass::findOne($attributes);
+        if ($model) {
+            return $model;
+        }
 
         return new $modelClass($attributes);
     }

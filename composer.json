@@ -20,6 +20,7 @@
     },
     "config-plugin": {
       "userSettings": "config/userSettings.php",
+      "core": "config/userSettings.php",
       "migrationNamespaces": "config/migrationNamespaces.php"
     }
   }

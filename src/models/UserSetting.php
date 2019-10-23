@@ -4,9 +4,9 @@ namespace codexten\yii\user\settings\models;
 
 use codexten\yii\db\ActiveRecord;
 use codexten\yii\modules\auth\models\User;
-use codextend\yii\user\settings\models\query\UserSettingQuery;
 use Yii;
 use yii\db\ActiveQuery;
+use codexten\yii\user\settings\models\query\UserSettingQuery;
 
 /**
  * This is the model class for table "{{%user_setting}}".

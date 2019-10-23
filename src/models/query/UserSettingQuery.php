@@ -1,6 +1,6 @@
 <?php
 
-namespace codextend\yii\user\settings\models\query;
+namespace codexten\yii\user\settings\models\query;
 
 /**
  * This is the ActiveQuery class for [[\codextend\yii\user\settings\models\UserSetting]].
