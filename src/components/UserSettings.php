@@ -51,12 +51,12 @@ class UserSettings extends Component
     /**
      * @return ActiveQuery
      */
-    public function getBaseQuery()
+    public function getBaseQuery($userId = null)
     {
         /* @var $modelClass ActiveRecord */
         $modelClass = $this->modelClass;
 
-        return (new ActiveQuery($modelClass))->andWhere(['user_id' => $this->_userId]);
+        return (new ActiveQuery($modelClass))->andWhere(['user_id' => $userId ?: $this->_userId]);
     }
 
     /**
@@ -79,16 +79,21 @@ class UserSettings extends Component
         return new $modelClass($attributes);
     }
 
-    public function set($key, $value)
+    public function set($key, $value, $userId = null)
     {
-        $model = $this->getModel(['key' => $key, 'value' => $value]);
+        $attributes = ['key' => $key, 'value' => $value];
+        if ($userId) {
+            $attributes['user_id'] = $userId;
+        }
+        $model = $this->getModel($attributes);
 
         return $model->save();
     }
 
-    public function get($key, $default = null)
+    public function get($key, $default = null, $userId = null)
     {
-        $model = $this->getBaseQuery()->andWhere(['key' => $key])->one();
+
+        $model = $this->getBaseQuery($userId)->andWhere(['key' => $key])->one();
 
         return $model ? $model['value'] : $default;
     }
