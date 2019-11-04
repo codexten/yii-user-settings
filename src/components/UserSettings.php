@@ -79,17 +79,29 @@ class UserSettings extends Component
         return new $modelClass($attributes);
     }
 
+    /**
+     * @param $key
+     * @param $value
+     * @param  null  $userId
+     * @return bool
+     */
     public function set($key, $value, $userId = null)
     {
-        $attributes = ['key' => $key, 'value' => $value];
+        $attributes = ['key' => $key];
         if ($userId) {
             $attributes['user_id'] = $userId;
         }
         $model = $this->getModel($attributes);
-
+        $model->value = $value;
         return $model->save();
     }
 
+    /**
+     * @param $key
+     * @param  null  $default
+     * @param  null  $userId
+     * @return mixed|null
+     */
     public function get($key, $default = null, $userId = null)
     {
 
