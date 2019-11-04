@@ -79,6 +79,12 @@ class UserSettings extends Component
         return new $modelClass($attributes);
     }
 
+    /**
+     * @param $key
+     * @param $value
+     * @param  null  $userId
+     * @return bool
+     */
     public function set($key, $value, $userId = null)
     {
         $attributes = ['key' => $key];
@@ -90,6 +96,12 @@ class UserSettings extends Component
         return $model->save();
     }
 
+    /**
+     * @param $key
+     * @param  null  $default
+     * @param  null  $userId
+     * @return mixed|null
+     */
     public function get($key, $default = null, $userId = null)
     {
 
