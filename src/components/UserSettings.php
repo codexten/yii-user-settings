@@ -81,12 +81,12 @@ class UserSettings extends Component
 
     public function set($key, $value, $userId = null)
     {
-        $attributes = ['key' => $key, 'value' => $value];
+        $attributes = ['key' => $key];
         if ($userId) {
             $attributes['user_id'] = $userId;
         }
         $model = $this->getModel($attributes);
-
+        $model->value = $value;
         return $model->save();
     }
 
